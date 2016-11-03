@@ -8,7 +8,7 @@ class ToDoItemComponent extends React.Component {
   render() {
     return (
       <div className="todoitem-component">
-        Please edit src/components///ToDoItemComponent.js to update this component!
+        {this.props.text}
       </div>
     );
   }
