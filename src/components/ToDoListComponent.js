@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ToDoItemComponent from './ToDoItemComponent'
+import * as ToDoListActions from '../actions/ToDoListActions'
 import ToDoStore from '../stores/ToDoStore'
 
 require('styles//ToDoList.css');
@@ -29,10 +30,15 @@ class ToDoListComponent extends React.Component {
     })
   }
 
+  createNew() {
+    ToDoListActions.addToDo(Date.now());
+  }
+
   render() {
     var self = this;
     return (
       <div className="todolist-component">
+        <button onClick={this.createNew.bind(this)}>Create</button>
         {self.renderView(self.state.todos)}
       </div>
     );
